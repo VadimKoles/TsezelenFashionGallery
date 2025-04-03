@@ -1,52 +1,5 @@
 // ИНИЦИАЛИЗАЦИЯ И ВАЖНЫЕ ПРОЦЕССЫ
-let po1 = document.querySelector("#point1")
-let po2 = document.querySelector("#point2")
-let po3 = document.querySelector("#point3")
-let loadDiv = document.querySelector(".loading")
-let do_loading = true
-let circles = document.querySelectorAll('.circle')
-window.addEventListener("load", function() {
-    setTimeout(function () {
-        do_loading = false
-    }, 2000)
-})
-setTimeout(function () {
-    loading()
-}, 300)
-// Анимация загрузки
-function loading() {
-    if (do_loading && loadDiv.id == "t") {
-        setTimeout(function () {
-            po1.setAttribute('style', 'transform: scale(1.7);')
-            po2.setAttribute('style', 'transform: scale(1);')
-            po3.setAttribute('style', 'transform: scale(1);')
-            setTimeout(function () {
-                po1.setAttribute('style', 'transform: scale(1);')
-                po2.setAttribute('style', 'transform: scale(1.7);')
-                po3.setAttribute('style', 'transform: scale(1);')
-                setTimeout(function () {
-                    po1.setAttribute('style', 'transform: scale(1);')
-                    po2.setAttribute('style', 'transform: scale(1);')
-                    po3.setAttribute('style', 'transform: scale(1.7);')
-                    setTimeout(function () {
-                        po3.setAttribute('style', 'transform: scale(1);')
-                    }, 200)
-                }, 200)
-            }, 200)
-        }, 200)
-        setTimeout(function () {
-            loading()
-        }, 900)
-    } else {
-        loadDiv.style.backgroundColor = "rgba(255, 255, 255, 0)"
-        po1.setAttribute('style', 'display: none')
-        po2.setAttribute('style', 'display: none')
-        po3.setAttribute('style', 'display: none')
-        setTimeout(function () {
-            loadDiv.style.display = "none"
-        }, 1000)
-    }
-}
+
 // создание локального хранилища
 if(!localStorage.getItem('doTransformStorage')){
     let doTransformStorage = false

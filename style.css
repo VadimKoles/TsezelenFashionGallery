@@ -238,28 +238,6 @@ body{
         transition: transform 1s;
     }
 
-    .loading{
-        width: 100vw;
-        height: 100vh;
-        background-color: #ffffff;
-        z-index: 1000;
-        transition: 1s;
-        position: fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .circle{
-        width: 15px;
-        height: 15px;
-        background-color: rgb(148, 148, 148);
-        border-radius: 8px;
-        transition: 0.2s;
-        position: relative;
-        margin-right: 7px;
-    }
-
 
     /*   Profile   */
     
