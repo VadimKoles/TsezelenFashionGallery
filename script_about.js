@@ -10,29 +10,14 @@ if(!localStorage.getItem('doTransformStorage')){
 let header = document.querySelector(".nav")
 let scrollTop
 let doingToTop = true
-let sticks = document.querySelectorAll('.stick')
 window.addEventListener("scroll", function(){
     scrollTop = Math.round(window.pageYOffset)
-    if ((window.innerHeight*0.27<scrollTop) && (window.innerHeight*0.4>scrollTop)) {
+    if ((window.innerHeight*0.27<scrollTop) && (window.innerHeight*0.3>scrollTop)) {
         transformation(true)
     } else if (scrollTop<window.innerHeight*0.21) {
         transformation(false)
     }
-    if (window.innerHeight <= scrollTop) {
-        header.style.backgroundColor = "rgba(255, 255, 255, 0.0)"
-        document.querySelector(".logo_full").style.filter = "invert(1)"
-        document.querySelector(".logo_inscription").style.filter = "invert(1)"
-        sticks.forEach(function(stick){
-            stick.setAttribute('style', 'justify-content: space-between; background-color: white;')
-        })
-    } else if (window.innerHeight - 20 > scrollTop && scrollTop > window.innerHeight*0.8) {
-        header.style.backgroundColor = "rgba(255, 255, 255, 0.92)"
-        document.querySelector(".logo_full").style.filter = "invert(0)"
-        document.querySelector(".logo_inscription").style.filter = "invert(0)"
-        sticks.forEach(function(stick){
-            stick.setAttribute('style', 'justify-content: space-between; background-color: black;')
-        })
-    }
+
     if (window.innerHeight<scrollTop)  {
         if (doingToTop) {
             buttonToTop(true)
@@ -43,22 +28,6 @@ window.addEventListener("scroll", function(){
         }
     }
 
-})
-scrollTop = Math.round(window.pageYOffset)
-if (window.innerHeight-5 <= scrollTop) {
-        header.style.backgroundColor = "rgba(255, 255, 255, 0.0)"
-        document.querySelector(".logo_full").style.filter = "invert(1)"
-        document.querySelector(".logo_inscription").style.filter = "invert(1)"
-        sticks.forEach(function(stick){
-            stick.setAttribute('style', 'justify-content: space-between; background-color: white;')
-        })
-}
-
-document.querySelector(".swiper").addEventListener("pointerdown", function() {
-    scrollTop = Math.round(window.pageYOffset)
-    if (scrollTop < window.innerHeight || scrollTop > window.innerHeight+5) {
-        document.querySelector(".swiper").scrollIntoView({behavior: "smooth"})
-    }
 })
 
 // let start, end
@@ -97,41 +66,29 @@ links.forEach(function(element){
     })
 })
 // анимация закртия и открытия бургер меню
-
+let sticks = document.querySelectorAll('.stick')
 let condition = true
 function forwards(){
     sticks.forEach(function(stick){
-        stick.setAttribute('style', 'justify-content: center; position: absolute; background-color: black;')
+        stick.setAttribute('style', 'justify-content: center; position: absolute')
     })
         header.style.backgroundColor = "rgb(255, 255, 255)"
         st1.style.transform = "rotate(45deg)"
         st2.style.display = "none"
         st3.style.transform = "rotate(-45deg)"
-    document.querySelector(".logo_full").style.filter = "invert(0)"
-    document.querySelector(".logo_inscription").style.filter = "invert(0)"
     document.querySelector('.burger_menu').style.transform = "translateX(0px)"
     document.querySelector('.burger_menu').style.backgroundColor = "rgba(255, 255, 255)"
     document.querySelector('.burger_menu_icon').style.height = "1px"
     condition = false
 }
 function backwards(){
-    scrollTop = Math.round(window.pageYOffset)
-    if (window.innerHeight <= scrollTop) {
-        header.style.backgroundColor = "rgba(255, 255, 255, 0.0)"
-        sticks.forEach(function(stick){
-            stick.setAttribute('style', 'justify-content: space-between; background-color: white;')
-        })
-        document.querySelector(".logo_full").style.filter = "invert(1)"
-        document.querySelector(".logo_inscription").style.filter = "invert(1)"
-    } else {
+    sticks.forEach(function(stick){
+        stick.setAttribute('style', 'justify-content: space-between; ')
+    })
         header.style.backgroundColor = "rgba(255, 255, 255, 0.92)"
-        sticks.forEach(function(stick){
-            stick.setAttribute('style', 'justify-content: space-between; background-color: black;')
-        })
-    }
-    st1.style.transform = "rotate(0deg)"
-    st2.style.display = "block"
-    st3.style.transform = "rotate(0deg)"
+        st1.style.transform = "rotate(0deg)"
+        st2.style.display = "block"
+        st3.style.transform = "rotate(0deg)"
     document.querySelector('.burger_menu').style.transform = "translateX(-100vw)"
     document.querySelector('.burger_menu').style.backgroundColor = "rgba(255, 255, 255, 0.7)"
     document.querySelector('.burger_menu_icon').style.height = "16px"
@@ -187,19 +144,6 @@ function transformation(doTransformation, doTransition=true) {
 //     }
 // }
 
-// карусель
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'vertical',
-    effect: 'fade',
-    parallax: true,
-    speed: 800,
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      draggable: true
-    },
-  });
 
 
 // Анимация прокрутки
