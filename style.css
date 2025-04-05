@@ -13,7 +13,7 @@ body{
 
 header{
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background-image: url(images/Default_photo1.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -30,7 +30,7 @@ header{
 
 .darker{
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     background-color: rgba(0, 0, 0, 0.299);
     background-attachment: fixed;
     background-size: cover;
@@ -54,7 +54,7 @@ header{
 }
 
 .logo_full{
-    height: 33vh;
+    height: 33dvh;
     margin-top: 5px;
     min-height: 190px;
     max-height: 230px;
@@ -114,7 +114,7 @@ header{
 .burger_menu{  
     top: 50px;
     background-color: rgba(255, 255, 255, 0.7);
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -145,11 +145,11 @@ header{
     align-items: center;
     text-align: center;
     border-bottom: 1px solid #000000;
-    height: 12vh; 
+    height: 12dvh; 
     width: 100vw;
 }
 .smaller{
-    margin-top: 3vh;
+    margin-top: 3dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -295,7 +295,7 @@ h4{
 
 .background_picture_narration{
     width: 100%;
-    height: 45vh;
+    height: 45dvh;
     background-image: url(images/Default_photo1.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -305,7 +305,7 @@ h4{
 
 .background_narration{
     width: 100%;
-    height: 31vh;
+    height: 31dvh;
     margin-top: 30px;
     background-color: #E0E0E0;
     border-top-right-radius: 90px;
@@ -495,7 +495,7 @@ footer{
 /* ПОДРОБНЕЕ */
 .card_menu{
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     overflow-y: scroll;
     position: fixed;
     z-index: 995;
@@ -528,7 +528,7 @@ footer{
 background: linear-gradient(142deg, rgba(0,0,0,0) 68%, rgba(255,255,255,1) 100%); */
 .swiper {
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .swiper-slide {

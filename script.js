@@ -165,7 +165,7 @@ function transformation(doTransformation, doTransition=true) {
     } else {
         header.setAttribute('style', 'top: 27%; position: absolute; transition: height 0.5s, min-height 0.5s, background-color 1s; height: 44%; min-height: 270px; background-color: rgba(255, 255, 255, 0.72); flex-direction: column;')
         document.querySelector(".logo_full").src = "images/logo_tsezelen_full2_gradient_sqr.png"
-        document.querySelector(".logo_full").setAttribute('style', 'height: 33vh; min-height: 190px;')
+        document.querySelector(".logo_full").setAttribute('style', 'height: 33dvh; min-height: 190px;')
         document.querySelector(".naver").style.display = "flex"
         document.querySelector(".logo_inscription").style.display = "none"
         document.querySelector(".burger_menu_icon").style.display = "none"
