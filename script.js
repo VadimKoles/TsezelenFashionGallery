@@ -44,15 +44,6 @@ window.addEventListener("scroll", function(){
     }
 
 })
-scrollTop = Math.round(window.pageYOffset)
-if (window.innerHeight-5 <= scrollTop) {
-        header.style.backgroundColor = "rgba(255, 255, 255, 0.0)"
-        document.querySelector(".logo_full").style.filter = "invert(1)"
-        document.querySelector(".logo_inscription").style.filter = "invert(1)"
-        sticks.forEach(function(stick){
-            stick.setAttribute('style', 'justify-content: space-between; background-color: white;')
-        })
-}
 
 document.querySelector(".swiper").addEventListener("pointerdown", function() {
     scrollTop = Math.round(window.pageYOffset)
@@ -81,6 +72,24 @@ if (scrollTop>320) {
         transformation(true, false)
     } 
 }
+
+function update_head () {
+    scrollTop = Math.round(window.pageYOffset)
+    if (window.innerHeight-5 <= scrollTop) {
+            header.style.backgroundColor = "rgba(255, 255, 255, 0.0)"
+            document.querySelector(".logo_full").style.filter = "invert(1)"
+            document.querySelector(".logo_inscription").style.filter = "invert(1)"
+            sticks.forEach(function(stick){
+                stick.setAttribute('style', 'justify-content: space-between; background-color: white;')
+            })
+    }
+}
+update_head()
+document.querySelector(".arrow-7").addEventListener("click", function(){
+    document.querySelector(".swiper").scrollIntoView({behavior: "smooth"})
+    setTimeout(transformation, 500, true, false)
+    setTimeout(update_head, 500)
+})
 
 // АНИМАЦИИ
 
@@ -150,14 +159,14 @@ function transformation(doTransformation, doTransition=true) {
     let doTransformStorage = JSON.parse(localStorage.getItem('doTransformStorage'))
     if (doTransformation) {
         if (doTransition) {
-            header.setAttribute('style', 'top: 0px; position: fixed; transition: height 1s, background-color 1s; height: 50px; min-height: 50px; background-color: rgba(255, 255, 255, 0.92); flex-direction: row; justify-content: space-around;')
+            header.setAttribute('style', 'top: 0px; position: fixed; transition: height 1s, background-color 1s; height: 70px; min-height: 50px; background-color: rgba(255, 255, 255, 0.92); flex-direction: row; justify-content: space-around;')
         } else {
-            header.setAttribute('style', 'top: 0px; position: fixed; transition: height 0s, background-color 1s; height: 50px; min-height: 50px; background-color: rgba(255, 255, 255, 0.92); flex-direction: row; justify-content: space-around;')
+            header.setAttribute('style', 'top: 0px; position: fixed; transition: height 0s, background-color 1s; height: 70px; min-height: 50px; background-color: rgba(255, 255, 255, 0.92); flex-direction: row; justify-content: space-around;')
         }
         
         document.querySelector(".logo_full").src = "images/logo_tsezelen_full2_black_main.png"
         document.querySelector(".logo_full").setAttribute('style', 'height: 40px; width: 27px; min-height: 40px;')
-        document.querySelector(".naver").style.display = "none"
+        document.querySelector(".marquee").style.display = "none"
         document.querySelector(".logo_inscription").style.display = "block"
         document.querySelector(".burger_menu_icon").style.display = "flex"
         doTransformStorage = true
@@ -166,7 +175,7 @@ function transformation(doTransformation, doTransition=true) {
         header.setAttribute('style', 'top: 27%; position: absolute; transition: height 0.5s, min-height 0.5s, background-color 1s; height: 44%; min-height: 270px; background-color: rgba(255, 255, 255, 0.72); flex-direction: column;')
         document.querySelector(".logo_full").src = "images/logo_tsezelen_full2_gradient_sqr.png"
         document.querySelector(".logo_full").setAttribute('style', 'height: 33dvh; min-height: 190px;')
-        document.querySelector(".naver").style.display = "flex"
+        document.querySelector(".marquee").style.display = "flex"
         document.querySelector(".logo_inscription").style.display = "none"
         document.querySelector(".burger_menu_icon").style.display = "none"
         doTransformStorage = false

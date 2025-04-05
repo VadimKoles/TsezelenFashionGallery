@@ -50,7 +50,10 @@ if (scrollTop>320) {
         transformation(true, false)
     } 
 }
-
+document.querySelector(".arrow-7").addEventListener("click", function(){
+    document.querySelector("#main_scroll").scrollIntoView({behavior: "smooth"})
+    setTimeout(transformation, 500, true, false)
+})
 // АНИМАЦИИ
 
 // Плавная прокрутка
@@ -114,7 +117,7 @@ function transformation(doTransformation, doTransition=true) {
         
         document.querySelector(".logo_full").src = "images/logo_tsezelen_full2_black_main.png"
         document.querySelector(".logo_full").setAttribute('style', 'height: 40px; width: 27px; min-height: 40px;')
-        document.querySelector(".naver").style.display = "none"
+        document.querySelector(".marquee").style.display = "none"
         document.querySelector(".logo_inscription").style.display = "block"
         document.querySelector(".burger_menu_icon").style.display = "flex"
         doTransformStorage = true
@@ -123,7 +126,7 @@ function transformation(doTransformation, doTransition=true) {
         header.setAttribute('style', 'top: 27%; position: absolute; transition: height 0.5s, min-height 0.5s, background-color 1s; height: 44%; min-height: 270px; background-color: rgba(255, 255, 255, 0.72); flex-direction: column;')
         document.querySelector(".logo_full").src = "images/logo_tsezelen_full2_gradient_sqr.png"
         document.querySelector(".logo_full").setAttribute('style', 'height: 33vh; min-height: 190px;')
-        document.querySelector(".naver").style.display = "flex"
+        document.querySelector(".marquee").style.display = "flex"
         document.querySelector(".logo_inscription").style.display = "none"
         document.querySelector(".burger_menu_icon").style.display = "none"
         doTransformStorage = false
