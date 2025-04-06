@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/logo_tsezelen_main2.png">
     <title>Tsezelen</title>
@@ -19,19 +20,43 @@
                     <div id="st2" class="stick"></div>
                     <div id="st3" class="stick"></div>
                 </div>
-                <marquee class="marquee">
-                    <a href="index.html">Главная</a>
-                    <a href="index.html">Ручная вышивка</a>
-                    <a href="index.html">Индивидуальные лекала</a>
-                    <a href="index.html">ART футболки</a>
-                    <a href="index.html">Белые рубашки</a>
-                    <a href="index.html">Бальное платье напрокат</a>
-                    <a href="index.html">Хочу как на фоточке</a>
-                    <a href="index.html">Мой гардероб</a>
-                    <a href="index.html">Публичная деятельность</a>
-                    <a href="about.html">Обо мне</a>
-                    <a href="#footer_contacts" class="scroll">Контакты</a>
-                </marquee>
+                <div class="swiper run-swiper">
+                    <div class="swiper-wrapper run-swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="index.html"><div class="parallelogram"><p class="p_naver">Главная</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.html"><div class="parallelogram"><p class="p_naver">Публичная <br> деятельность</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="about.html"><div class="parallelogram"><p class="p_naver">Обо мне</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.html"><div class="parallelogram"><p class="p_naver">Ручная <br> вышивка</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.html"><div class="parallelogram"><p class="p_naver">Индивидуальные <br> лекала</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.html"><div class="parallelogram"><p class="p_naver">ART <br> футболки</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.html"><div class="parallelogram"><p class="p_naver">Белые <br> рубашки</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.html"><div class="parallelogram"><p class="p_naver">Бальное <br> платье напрокат</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.html"><div class="parallelogram"><p class="p_naver">Хочу как <br> на фоточке</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="index.html"><div class="parallelogram"><p class="p_naver">Мой <br> гардероб</p></div></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#footer_contacts" class="scroll"><div class="parallelogram"><p class="p_naver">Контакты</p></div></a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="burger_menu">
                 <a href="index.html" class="bigger_burger_a">ГЛАВНАЯ</a>
@@ -110,6 +135,7 @@
             </div>
         </footer>
     </main>
+    <script src="swiper-bundle.min.js"></script>
     <script src="script_about.js"></script>
 </body>
 </html>

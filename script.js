@@ -45,10 +45,10 @@ window.addEventListener("scroll", function(){
 
 })
 
-document.querySelector(".swiper").addEventListener("pointerdown", function() {
+document.querySelector(".swiper-main").addEventListener("pointerdown", function() {
     scrollTop = Math.round(window.pageYOffset)
     if (scrollTop < window.innerHeight || scrollTop > window.innerHeight+5) {
-        document.querySelector(".swiper").scrollIntoView({behavior: "smooth"})
+        document.querySelector(".swiper-main").scrollIntoView({behavior: "smooth"})
     }
 })
 
@@ -86,7 +86,7 @@ function update_head () {
 }
 update_head()
 document.querySelector(".arrow-7").addEventListener("click", function(){
-    document.querySelector(".swiper").scrollIntoView({behavior: "smooth"})
+    document.querySelector(".swiper-main").scrollIntoView({behavior: "smooth"})
     setTimeout(transformation, 500, true, false)
     setTimeout(update_head, 500)
 })
@@ -166,7 +166,7 @@ function transformation(doTransformation, doTransition=true) {
         
         document.querySelector(".logo_full").src = "images/logo_tsezelen_full2_black_main.png"
         document.querySelector(".logo_full").setAttribute('style', 'height: 40px; width: 27px; min-height: 40px;')
-        document.querySelector(".marquee").style.display = "none"
+        document.querySelector(".run-swiper").style.display = "none"
         document.querySelector(".logo_inscription").style.display = "block"
         document.querySelector(".burger_menu_icon").style.display = "flex"
         doTransformStorage = true
@@ -175,7 +175,7 @@ function transformation(doTransformation, doTransition=true) {
         header.setAttribute('style', 'top: 27%; position: absolute; transition: height 0.5s, min-height 0.5s, background-color 1s; height: 44%; min-height: 270px; background-color: rgba(255, 255, 255, 0.72); flex-direction: column;')
         document.querySelector(".logo_full").src = "images/logo_tsezelen_full2_gradient_sqr.png"
         document.querySelector(".logo_full").setAttribute('style', 'height: 33dvh; min-height: 190px;')
-        document.querySelector(".marquee").style.display = "block"
+        document.querySelector(".run-swiper").style.display = "inline-block"
         document.querySelector(".logo_inscription").style.display = "none"
         document.querySelector(".burger_menu_icon").style.display = "none"
         doTransformStorage = false
@@ -197,7 +197,7 @@ function transformation(doTransformation, doTransition=true) {
 // }
 
 // карусель
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-main', {
     // Optional parameters
     direction: 'vertical',
     effect: 'fade',
@@ -208,8 +208,21 @@ const swiper = new Swiper('.swiper', {
       el: '.swiper-scrollbar',
       draggable: true
     },
-  });
+});
 
+let runSwiper = new Swiper('.run-swiper', {  
+    observer: true,
+    slidesPerView: 3,
+    spaceBetween: 10,
+    speed: 2000,
+    loop: true,
+    //allowTouchMove: false, // можно ещё отключить свайп
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
+    },
+    
+});
 
 // Анимация прокрутки
 function buttonToTop(doTransButton) {
