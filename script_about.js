@@ -148,15 +148,15 @@ function transformation(doTransformation, doTransition=true) {
 // }
 
 // карусель
-const runSwiper = new Swiper('.run-swiper', {  
+let runSwiper = new Swiper('.run-swiper', {  
     observer: true,
-    slidesPerView: 3,
+    slidesPerView: 3.1,
     spaceBetween: 10,
-    speed: 2000,
+    speed: 1500,
     loop: true,
     //allowTouchMove: false, // можно ещё отключить свайп
     autoplay: {
-      delay: 1500,
+      delay: 1200,
       disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
     },
     
