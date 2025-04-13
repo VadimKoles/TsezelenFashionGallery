@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo_tsezelen_main2.png">
+    <title>Tsezelen</title>
+</head>
+<body>
+    
+    <div class="nav_card_menu" id="nav_card_menu">
+        <div class="nav_card_menu_text">
+            <a href="index.html"><img src="images/png-clipart.png" class="back_img"></a>
+            <h3>Ручная вышивка</h3>
+            <div class="burger_menu_icon" style="display: flex;">
+                <div id="st1" class="stick"></div>
+                <div id="st2" class="stick"></div>
+                <div id="st3" class="stick"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="burger_menu" style="top: 50px;">
+        <a href="index.html" class="bigger_burger_a">ГЛАВНАЯ</a>
+        <a href="index.html" class="bigger_burger_a">ПУБЛИЧНАЯ ДЕЯТЕЛЬНОСТЬ</a>
+        <a href="about.html" class="bigger_burger_a">ОБО МНЕ</a>
+        <div class="smaller">
+            <a href="hand_embroidery.html" class="burger_a">РУЧНАЯ ВЫШИВКА</a>
+            <a href="index.html" class="burger_a">ИНДИВИДУАЛЬНЫЕ ЛЕКАЛА</a>
+            <a href="index.html" class="burger_a">ART ФУТБОЛКИ</a>
+            <a href="index.html" class="burger_a">БЕЛЫЕ РУБАШКИ</a>
+            <a href="index.html" class="burger_a">БАЛЬНОЕ ПЛАТЬЕ НАПРОКАТ</a>
+            <a href="esthete.html" class="burger_a">ЛУПА ЭСТЕТА</a>
+            <a onclick="backwards()" href="#footer_contacts" class="burger_a scroll">КОНТАКТЫ</a>
+        </div>
+    </div>
+
+    <main id="main_scroll"  style="padding-top: 50px;">
+        <a href="#main_scroll" class="scrollToTop scroll"><img class="imgToTop" src="images/strelka_rjfnfkmhm72a_64.png"></a>
+
+        <form id="section_form" class="section_form">
+            <h1>ЗАКАЗАТЬ</h1>
+            <div style="display: flex; flex-direction: column; justify-content: start; width: 100%;">
+                <div class="label_div">
+                    <label for="form-name">Имя</label>
+                    <input type="name" name="name" id="form-name" required>
+                </div>
+                <div class="label_div">
+                    <label for="form-phone">Номер телефона</label>
+                    <input type="tel" name="phone" id="form-phone" required>
+                </div>
+                <div class="label_div">
+                    <label for="form-how">Как и когда с вами удобно связаться</label>
+                    <input type="text" name="how" id="form-how" placeholder="Telegram">
+                </div>
+                <input type="hidden" id="form-type" name="type" value="Ручная вышивка">
+                <p id="error-text">Пожалуйста, заполните все поля</p>
+            </div>
+            <button type="button" id="sendMail" class="btn btn-success">ОТПРАВИТЬ</button>
+        </form>
+        
+        <h1>Lorem ipsum</h1>
+        <div class="line_big"></div>
+        <p class="narration"> <span class="emphasis">Lorem ipsum</span> dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis <span class="emphasis">nostrud</span> 
+            exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat</p>
+        <div class="background_picture_narration"></div>
+        <p class="narration"> <span class="emphasis">Lorem ipsum</span> dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis <span class="emphasis">nostrud</span> 
+            exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat</p>
+        <div class="background_picture_narration"></div>
+
+        <h1>Lorem ipsum</h1>
+        <div class="line_big"></div>
+        
+        <p class="narration"> <span class="emphasis_darker">Lorem ipsum</span> dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis <span class="emphasis_darker">nostrud</span> 
+            exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat</p>
+        
+        <footer id="footer_contacts">
+            <div class="indent_footer">
+                <img src="images/logo_tsezelen_full2_gradient_horiz_png.png" class="footer_logo">
+                <h4>Контактная информация</h4>
+                <div class="footer_string"><img src="images/pngegg.png" class="img_contact_footer"><p class="footer_p">+7 924 307 67 07</p></div>
+                <div class="footer_string"><img src="images/pngwing.com.png" class="img_contact_footer"><p class="footer_p">elenatsezelen@gmail.com</p></div>
+                <div class="footer_string"><img src="images/free-icon-pin-map-4230161.png" class="img_contact_footer"><p class="footer_p">г. Хабаровск, ул. Какая-то-там, 52</p></div>
+                <h4>Социальные сети</h4>
+                <div class="footer_string"><img src="images/telegram_icon.png" class="img_contact_footer"><a class="footer_p" href="https://t.me/tsezelen" style="text-decoration: underline;">Телеграм канал</a></div>
+                <h4>Техническая поддержка</h4>
+                <div class="footer_string"><img src="images/telegram_icon.png" class="img_contact_footer"><a class="footer_p" href="https://t.me/proger_vadim" style="text-decoration: underline;">Техподдержка</a></div>
+            </div>
+        </footer>
+    </main>
+    <div class="popup" id="popup-success" onclick="close_popup('popup-success')">
+        <div class="popup-body">
+            <div class="popup-content" id="popup-success-content">
+                <div class="popup-text">
+                    <h2>Данные отправлены</h2>
+                    <div class="line_big"></div>
+                    <p>Скоро с Вами свяжутся удобным Вам способом, или Вы можете сами <a href="#footer_contacts" class="scroll" style="color: #ffab8d;">обратиться к нам</a></p> 
+                    <button onclick="close_popup('popup-success')" class="popup-button">ОК</button>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="popup-fail" onclick="close_popup('popup-fail')">
+        <div class="popup-body">
+            <div class="popup-content" id="popup-fail-content">
+                <div class="popup-text">
+                    <h2>Ошибка</h2>
+                    <div class="line_big"></div>
+                    <p>Технические неполадки, Вы можете обратиться в <a href="#footer_contacts" class="scroll" style="color: #ffab8d;">тех. поддержку</a> и <a href="#footer_contacts" class="scroll" style="color: #ffab8d;">связаться с нами</a></p> 
+                    <button onclick="close_popup('popup-success')" class="popup-button">ОК</button>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script_section.js"></script>
+</body>
+</html>

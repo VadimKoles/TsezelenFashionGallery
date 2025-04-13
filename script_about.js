@@ -110,9 +110,9 @@ function transformation(doTransformation, doTransition=true) {
     let doTransformStorage = JSON.parse(localStorage.getItem('doTransformStorage'))
     if (doTransformation) {
         if (doTransition) {
-            header.setAttribute('style', 'top: 0px; position: fixed; transition: height 1s, background-color 1s; height: 50px; min-height: 50px; background-color: rgba(255, 255, 255, 0.92); flex-direction: row; justify-content: space-around;')
+            header.setAttribute('style', 'top: 0px; position: fixed; transition: height 1s, background-color 1s; height: 70px; min-height: 70px; background-color: rgba(255, 255, 255, 0.92); flex-direction: row; justify-content: space-around;')
         } else {
-            header.setAttribute('style', 'top: 0px; position: fixed; transition: height 0s, background-color 1s; height: 50px; min-height: 50px; background-color: rgba(255, 255, 255, 0.92); flex-direction: row; justify-content: space-around;')
+            header.setAttribute('style', 'top: 0px; position: fixed; transition: height 0s, background-color 1s; height: 70px; min-height: 70px; background-color: rgba(255, 255, 255, 0.92); flex-direction: row; justify-content: space-around;')
         }
         
         document.querySelector(".logo_full").src = "images/logo_tsezelen_full2_black_main.png"
@@ -163,19 +163,17 @@ let runSwiper = new Swiper('.run-swiper', {
 });
 
 
-// Анимация прокрутки
+// Анимация кнопки прокрутки
 function buttonToTop(doTransButton) {
-
     if (doTransButton == true) {
-        document.querySelector(".scrollToTop").setAttribute('style', 'transform: translateX(0); background-color: #ffcfbdd4; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.8);')
+        document.querySelector(".scrollToTop").setAttribute('style', 'transform: translateX(0); background-color:rgba(0, 0, 0, 0.3); box-shadow: 0px 0px 10px 10px rgba(255, 255, 255, 0.8);')
         document.querySelector(".imgToTop").setAttribute('style', 'transform: rotate(180deg);')
         doingToTop = false
     } else {
-        document.querySelector(".scrollToTop").setAttribute('style', 'transform: translateX(14vw); background-color: #ffbba200; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.0);')
+        document.querySelector(".scrollToTop").setAttribute('style', 'transform: translateX(14vw); background-color:rgba(0, 0, 0, 0); box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.0);')
         document.querySelector(".imgToTop").setAttribute('style', 'transform: rotate(-180deg);')
         doingToTop = true
     }
-    
 }
 
 
