@@ -45,11 +45,11 @@ document.querySelector("#sendMail").addEventListener("click", function() {
             $("#sendMail").prop('disabled', true)
         },
         success: function(flag) {
-            if (flag) {
+            if (flag == true) {
                 $("#section_form").trigger("reset")
                 open_popup("popup-success")
             } else {
-                
+                open_popup("popup-fail")
             }
             
             document.querySelector("#error-text").style.display = "none"
